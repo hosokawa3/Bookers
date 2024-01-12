@@ -8,6 +8,13 @@
   <h3>Body</h3>
   <span><%= book.body %></span>
 
+  <span>
+    <%= link_to 'Show' , "/books/#{book.id}" %>
+  </span>
+  <span>
+    <%= link_to 'Edit' , "/books/edit" %>
+  </span>
+
 <% end %>
 
 
