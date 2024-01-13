@@ -1,25 +1,30 @@
 <h1>Books</h1>
-
+<table class="index">
 <% @books.each do |book| %>
 
-  <h3>Title</h3>
-  <span><%= book.title %></span>
+<thead>
+  <tr><th>Title</th><th>Body</th></tr>
+</thead>
 
-  <h3>Body</h3>
-  <span><%= book.body %></span>
+<tbody>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
 
-  <span>
-    <%= link_to 'Show' , book_path(book.id) %>
-  </span>
-  <span>
-    <%= link_to 'Edit' , edit_book_path(book.id) %>
-  </span>
-  <span>
-    <%= link_to 'Destroy' , book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
-  </span>
+    <td>
+      <%= link_to 'Show' , book_path(book.id) %>
+    </td>
+    <td>
+      <%= link_to 'Edit' , edit_book_path(book.id) %>
+    </td>
+    <td>
+      <%= link_to 'Destroy' , book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
+    </td>
+  </tr>
+</tbody>
 
 <% end %>
-
+</table>
 
 <h2>New book</h2>
 <% if @book.errors.any? %>
